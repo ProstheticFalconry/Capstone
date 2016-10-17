@@ -34,3 +34,7 @@ https://www.sparkfun.com/products/8958
 
 Tilt Switch Sensor -
 http://www.hobbyking.com/hobbyking/store/__37874__Kingduino_Compatible_Tilt_Switch_Sensor_Module.html
+
+Control System References:
+
+Short paper on quadcopter control system design - http://andrew.gibiansky.com/downloads/pdf/Quadcopter%20Dynamics,%20Simulation,%20and%20Control.pdf
