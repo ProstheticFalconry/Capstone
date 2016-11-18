@@ -2313,6 +2313,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$7" library="2pin" deviceset="2PINBUS" device="2HOLE"/>
 <part name="U$8" library="2pin" deviceset="2PINBUS" device="2HOLE"/>
 <part name="U$9" library="2pin" deviceset="2PINBUS" device="2HOLE"/>
+<part name="U$1" library="2pin" deviceset="2PINBUS" device="2HOLE"/>
 </parts>
 <sheets>
 <sheet>
@@ -2333,21 +2334,21 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="111.252" y1="6.096" x2="107.442" y2="6.096" width="0.2032" layer="97" style="shortdash"/>
 <wire x1="107.442" y1="6.096" x2="107.442" y2="2.032" width="0.2032" layer="97" style="shortdash"/>
 <text x="-25.4" y="27.94" size="1.778" layer="95">3.3V Supply</text>
-<text x="149.86" y="43.18" size="1.778" layer="95">Ultrasonic Sensors will be powered
+<text x="160.02" y="116.84" size="1.778" layer="95">Ultrasonic Sensors will be powered
 by 5V supply from power supply board</text>
-<text x="142.24" y="20.32" size="1.778" layer="95">Sensor Section of Main Board Includes:
+<text x="137.16" y="12.7" size="1.778" layer="95">Sensor Section of Main Board Includes:
 - Connectors for 4 Ultrasonic Proximity Sensors
 - Connector for Serial Camera
 - MPU6050 (6-axis gyro and accelerometer)
 - Magnetomer connected directly to MPU6050</text>
-<text x="-83.82" y="-20.32" size="1.778" layer="97">*** Frame synchronization digital input. Connected to GND by default </text>
-<text x="-63.5" y="-22.86" size="1.778" layer="97">Cut trace for external sync </text>
-<text x="-68.58" y="0" size="1.778" layer="97">Default Address = 0x68 (pin AD0 is logic low)</text>
-<text x="-68.58" y="-2.54" size="1.778" layer="97">Alternative Address =0x69 (pin AD0 is logic high)</text>
-<text x="-83.82" y="2.54" size="1.778" layer="97">The LSB bit of the 7 bit address is determined by the logic level on pin AD0.</text>
-<text x="-83.82" y="-10.16" size="1.778" layer="97">** Optional external reference clock input. Connected to GND by default.</text>
-<text x="-63.5" y="-12.7" size="1.778" layer="97">Cut trace for external clock</text>
-<text x="-86.36" y="-27.94" size="1.778" layer="95">Sparkfun Connections for MPU-6050 and HMC5883LSMD were used as reference</text>
+<text x="-88.9" y="-7.62" size="1.778" layer="97">*** Frame synchronization digital input. Connected to GND by default </text>
+<text x="-88.9" y="-12.7" size="1.778" layer="97">Cut trace for external sync </text>
+<text x="-88.9" y="12.7" size="1.778" layer="97">Default Address = 0x68 (pin AD0 is logic low)</text>
+<text x="-88.9" y="7.62" size="1.778" layer="97">Alternative Address =0x69 (pin AD0 is logic high)</text>
+<text x="-88.9" y="17.78" size="1.778" layer="97">The LSB bit of the 7 bit address is determined by the logic level on pin AD0.</text>
+<text x="-88.9" y="2.54" size="1.778" layer="97">** Optional external reference clock input. Connected to GND by default.</text>
+<text x="-88.9" y="-2.54" size="1.778" layer="97">Cut trace for external clock</text>
+<text x="-88.9" y="-17.78" size="1.778" layer="95">Sparkfun Connections for MPU-6050 and HMC5883LSMD were used as reference</text>
 </plain>
 <instances>
 <instance part="GND1" gate="1" x="35.56" y="-12.7"/>
@@ -2384,6 +2385,7 @@ by 5V supply from power supply board</text>
 <instance part="U$7" gate="G$1" x="187.96" y="91.44"/>
 <instance part="U$8" gate="G$1" x="187.96" y="106.68"/>
 <instance part="U$9" gate="G$1" x="-17.78" y="35.56" rot="R180"/>
+<instance part="U$1" gate="G$1" x="187.96" y="40.64"/>
 </instances>
 <busses>
 </busses>
@@ -2554,7 +2556,7 @@ by 5V supply from power supply board</text>
 <segment>
 <pinref part="U$2" gate="P9" pin="I2C2_SCL"/>
 <wire x1="-33.02" y1="86.36" x2="-40.64" y2="86.36" width="0.1524" layer="91"/>
-<label x="-40.64" y="86.36" size="1.778" layer="95"/>
+<label x="-45.72" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -2673,9 +2675,14 @@ by 5V supply from power supply board</text>
 <label x="167.64" y="60.96" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="P9" pin="GPIO_49"/>
-<wire x1="-33.02" y1="81.28" x2="-40.64" y2="81.28" width="0.1524" layer="91"/>
-<label x="-48.26" y="81.28" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$1" pin="J1"/>
+<wire x1="180.34" y1="43.18" x2="177.8" y2="43.18" width="0.1524" layer="91"/>
+<label x="167.64" y="43.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="P9" pin="GPIO_3"/>
+<wire x1="-33.02" y1="83.82" x2="-40.64" y2="83.82" width="0.1524" layer="91"/>
+<label x="-50.8" y="83.82" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="US1_EDGE" class="0">
@@ -2685,9 +2692,9 @@ by 5V supply from power supply board</text>
 <label x="165.1" y="104.14" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="P9" pin="GPIO_117"/>
-<wire x1="-33.02" y1="78.74" x2="-40.64" y2="78.74" width="0.1524" layer="91"/>
-<label x="-48.26" y="78.74" size="1.778" layer="95"/>
+<pinref part="U$2" gate="P9" pin="GPIO_49"/>
+<wire x1="-33.02" y1="81.28" x2="-40.64" y2="81.28" width="0.1524" layer="91"/>
+<label x="-53.34" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="US2_EDGE" class="0">
@@ -2697,9 +2704,9 @@ by 5V supply from power supply board</text>
 <label x="165.1" y="88.9" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="P9" pin="GPIO_125"/>
-<wire x1="-33.02" y1="76.2" x2="-40.64" y2="76.2" width="0.1524" layer="91"/>
-<label x="-48.26" y="76.2" size="1.778" layer="95"/>
+<pinref part="U$2" gate="P9" pin="GPIO_117"/>
+<wire x1="-33.02" y1="78.74" x2="-40.64" y2="78.74" width="0.1524" layer="91"/>
+<label x="-53.34" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="US4_EDGE" class="0">
@@ -2709,9 +2716,9 @@ by 5V supply from power supply board</text>
 <label x="165.1" y="55.88" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="P9" pin="GPIO_120"/>
-<wire x1="-33.02" y1="71.12" x2="-40.64" y2="71.12" width="0.1524" layer="91"/>
-<label x="-48.26" y="71.12" size="1.778" layer="95"/>
+<pinref part="U$2" gate="P9" pin="GPIO_121"/>
+<wire x1="-33.02" y1="73.66" x2="-40.64" y2="73.66" width="0.1524" layer="91"/>
+<label x="-53.34" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="US3_EDGE" class="0">
@@ -2721,9 +2728,9 @@ by 5V supply from power supply board</text>
 <label x="165.1" y="73.66" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="P9" pin="GPIO_121"/>
-<wire x1="-33.02" y1="73.66" x2="-40.64" y2="73.66" width="0.1524" layer="91"/>
-<label x="-48.26" y="73.66" size="1.778" layer="95"/>
+<pinref part="U$2" gate="P9" pin="GPIO_125"/>
+<wire x1="-33.02" y1="76.2" x2="-40.64" y2="76.2" width="0.1524" layer="91"/>
+<label x="-53.34" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAM_RX" class="0">
@@ -2748,6 +2755,18 @@ by 5V supply from power supply board</text>
 <pinref part="U$3" gate="G$1" pin="J2"/>
 <wire x1="33.02" y1="78.74" x2="27.94" y2="78.74" width="0.1524" layer="91"/>
 <label x="22.86" y="78.74" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="US5_EDGE" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="J2"/>
+<wire x1="180.34" y1="38.1" x2="177.8" y2="38.1" width="0.1524" layer="91"/>
+<label x="165.1" y="38.1" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="P9" pin="GPIO_120"/>
+<wire x1="-33.02" y1="71.12" x2="-40.64" y2="71.12" width="0.1524" layer="91"/>
+<label x="-53.34" y="71.12" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
